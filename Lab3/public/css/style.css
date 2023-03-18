@@ -1,0 +1,255 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* MENU */
+.main-header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .main-header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-header__item-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-header__item {
+    margin-right: 20px;
+  }
+  
+  .main-header__item:last-child {
+    margin-right: 0;
+  }
+  
+  .main-header__item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .main-header__item a.active {
+    background-color: #fff;
+    color: #333;
+  }
+
+/* PRODUCT */
+main {
+    margin: 50px auto;
+    max-width: 1200px;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    flex-basis: 23%;
+    margin: 10px;
+    padding: 15px 0px;;
+  }
+  
+  .card__image {
+    position: relative;
+    height: 250px;
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+  }
+  
+  .card__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card__image:hover img {
+    transform: scale(1.1);
+  }
+  
+  .card__content {
+    padding: 20px;
+  }
+  
+  .product__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+  }
+  
+  .product__price {
+    color: #f70c0c;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  .product__description {
+    margin: 10px 0;
+    color: #777;
+    font-size: 1rem;
+  }
+  
+  .btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #fff;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+  }
+
+  .empty {
+    width: 100%;
+  }
+  
+/* ADMIN */
+/* Form thêm sản phẩm */
+
+.new-product {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+  width: 800px;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+select, textarea {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 97%;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+select {
+  width: 99%;
+}
+
+.form-group input[type="file"]{
+  padding: 5px;
+  width: 98%;
+}
+
+.form-group input[type="text"]:focus {
+  box-shadow: 0 0 3px rgb(48, 225, 48);
+}
+
+.btn-add {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #3e8e41;
+}
+
+/* QUẢN LÝ SẢN PHẨM */
+.product-table {
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.product-table table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.product-table th,
+.product-table td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.product-table th {
+  background-color: #f1f1f1;
+}
+
+.product-table td:first-child img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.product-table td:first-child span {
+  font-weight: bold;
+}
+
+.product-table td:last-child {
+  text-align: center;
+}
+
+.product-table td:last-child a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.product-table td:last-child a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>SHOP</title>
+</head>
+<body>
+    <%- include('header') %>
+
+    <div class="wrap-product">
+        <% for(let product of products) { %>
+            <div class="product-item">
+                <div class="product-title">
+                    <a href="/detail/<%= product.id %>"><h1 class="title"><%= product.title %></h1></a>
+                </div>
+                <div class="product-img">
+                    <img src="/images/<%= product.imageURL %>" alt="">
+                </div>
+                <div class="product-content">
+                    <h2 class="price">$<%= product.price %></h2>
+                    <p class="description"><%= product.description %></p>
+                </div>
+                <div class="product-action">
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

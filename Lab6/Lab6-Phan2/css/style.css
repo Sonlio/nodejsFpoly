@@ -1,0 +1,102 @@
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+.empty {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+/* FORM */
+form {
+    width: 450px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px gray;
+  }
+  
+h2 {
+    margin-bottom: 20px;
+}
+  
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+  
+input[type="text"], textarea
+{
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 95%;
+    outline: none;
+}
+  
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.btn:hover {
+    background-color: #3e8e41;
+}
+  
+/* TABLE */
+.wrap-table {
+    width: 50%;
+}
+
+h1.title {
+    margin: 0px 0px 20px 0px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px gray;
+}
+  
+thead {
+    background-color: #f2f2f2;
+  }
+  
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  
+th {
+    font-weight: bold;
+}
+  
+tfoot td {
+    font-weight: bold;
+    text-align: right;
+}
+  
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#delete {
+    cursor: pointer;
+}
+  

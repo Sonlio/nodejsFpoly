@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <title>SỬ DỤNG ANGULAR JS</title>
+</head>
+<body ng-app="myApp">
+    <div class="container" ng-controller="myController">
+        <form method="POST">
+            <h2>Thêm - Sửa bài viết</h2>
+            <label for="title">Mã sản phẩm</label>
+            <input type="text" id="title" name="title" placeholder="Tiêu đề bài viết" ng-model="title">
+        
+            <label for="content">Nội dung bài viết</label>
+            <textarea rows="7" type="text" id="content" name="content" placeholder="Nội dung bài viết" ng-model="content"></textarea>
+        
+            <button ng-click="addPost()" class="btn">Lưu</button>
+          </form>
+
+          <div class="wrap-table">
+            <h1 class="title">Quản lý bài viết</h1>
+            <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Tiêu đề</th>
+                    <th>Nội dung</th>
+                    <th>Ngày tạo</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody id="show-data">
+                  <tr ng-repeat="post in posts">
+                    <td>{{post.id}}</td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.content}}</td>
+                    <td>{{post.createDate.substr(0, 10)}}</td>
+                    <td>
+                      <a title="Sửa" href="edit.html#!?id={{post.id}}"><i class="fa-solid fa-pen-to-square" style="color: green"></i></a> |
+                      <a ng-click="delete($event)" title="Xóa" idPost="{{post.id}}" id="delete"><i class="fa-solid fa-trash" style="color: red"></i></a> 
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+    </div>
+
+    <script src="js/server.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>THÊM SẢN PHẨM</title>
+</head>
+<body>
+    <%- include('home') %>
+
+        <form class="new-product" action="/admin/addnew" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="idCategory">Danh mục:</label>
+                <select name="idCategory" id="idCategory">
+                    <% for(const cate of categories) { %>
+                        <option value="<%= cate.idCategory %>"><%= cate.nameCategory %></option>
+                   <% } %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nameProduct">Name:</label>
+                <input type="text" id="nameProduct" name="nameProduct" class="nameProduct">
+            </div>
+            <div class="form-group">
+                <label for="priceProduct">Giá:</label>
+                <input type="text" id="priceProduct" name="priceProduct" class="priceProduct">
+            </div>
+            <div class="form-group">
+                <label for="authorProduct">Tác giả:</label>
+                <input type="text" id="authorProduct" name="authorProduct" class="authorProduct">
+            </div>
+            <div class="form-group">
+                <label for="sortDescription">Mô tả ngắn:</label>
+                <textarea rows="5" id="sortDescription" name="sortDescription" class="sortDescription"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Mô tả chi tiết:</label>
+                <textarea rows="5" id="description" name="description" class="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="images">Hình ảnh sản phẩm:</label>
+                <input type="file" id="images" name="images" class="images">
+            </div>
+          
+            <button class="btn-add" type="submit">Thêm sản phẩm</button>
+        </form>
+</body>
+</html>

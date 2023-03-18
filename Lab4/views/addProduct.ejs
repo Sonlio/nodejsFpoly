@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Thêm sản phẩm</title>
+</head>
+<body>
+    <%- include('nav') %>
+    <form action="/admin/add-product" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nameProduct">Tên sản phẩm</label>
+            <input type="text" name="nameProduct" class="nameProduct">
+        </div>
+        <div class="form-group">
+            <label for="priceProduct">Giá</label>
+            <input type="text" name="priceProduct" class="priceProduct">
+        </div>
+        <div class="form-group">
+            <label for="description">Mô tả</label>
+            <textarea type="text" name="description" rows="5" class="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="image">Hình ảnh</label>
+            <input type="file" name="image" class="image">
+        </div>
+
+        <button type="submit">Thêm sản phẩm</button>
+    </form>
+</body>
+</html>

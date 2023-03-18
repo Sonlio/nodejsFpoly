@@ -1,0 +1,15 @@
+{
+  "name": "bai2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Bai2.js",
+  "scripts": {
+    "start": "node Bai2.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2"
+  }
+}

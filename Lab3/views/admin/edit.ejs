@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>UPDATE PRODUCT</title>
+</head>
+<body>
+    <%- include('home') %>
+
+        <form class="new-product" action="/admin/edit" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="idCategory">Danh mục:</label>
+                <select name="idCategory" id="idCategory">
+                    <%
+                    const [product] = products;
+                    for(const cate of categories) {
+                        if(cate.idCategory == product.idCategory) { %>
+                            <option selected value="<%= cate.idCategory %>"><%= cate.nameCategory %></option>
+
+                       <% } else { %>
+                        <option value="<%= cate.idCategory %>"><%= cate.nameCategory %></option>
+                        <%  } 
+                    } %>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="nameProduct">Name:</label>
+                <input type="text" id="nameProduct" name="nameProduct" class="nameProduct" value="<%= product.nameProduct %>">
+            </div>
+            <div class="form-group">
+                <label for="priceProduct">Giá:</label>
+                <input type="text" id="priceProduct" name="priceProduct" class="priceProduct" value="<%= product.priceProduct %>">
+            </div>
+            <div class="form-group">
+                <label for="authorProduct">Tác giả:</label>
+                <input type="text" id="authorProduct" name="authorProduct" class="authorProduct" value="<%= product.authorProduct %>">
+            </div>
+            <div class="form-group">
+                <label for="sortDescription">Mô tả ngắn:</label>
+                <textarea rows="5" id="sortDescription" name="sortDescription" class="sortDescription"><%=product.nameProduct %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Mô tả chi tiết:</label>
+                <textarea rows="5" id="description" name="description" class="description"><%= product.description %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="images">Hình ảnh sản phẩm:</label>
+                <input type="file" id="images" name="images" class="images">
+            </div>
+          
+            <button class="btn-add" type="submit">Cập nhật sản phẩm</button>
+        </form>
+</body>
+</html>

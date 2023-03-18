@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+                <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">BOOKS STORE</a></li>
+                <li class="main-header__item"><a href="/">Tất cả</a></li>
+                <% for(const cate of categories) { %>
+                <li class="main-header__item"><a class="active" href="/shop/<%= cate.idCategory %>">
+                    <%= cate.nameCategory %>
+                </a></li>
+                <%}%>
+            </ul>
+        </nav>
+    </header>
+
+    <main align="center">
+        <div class="grid">
+            <% if(products.length == 0) { %>
+                <div class="empty">
+                    <h1>Không tìm thấy sản phẩm nào!</h1>
+                </div>
+           <% } else { %>
+            <% for (const product of products) { %>
+                <article class="card product-item">
+                    <header class="card__header">
+                        <h1 class="product__title"><%= product.nameProduct %></h1>
+                    </header>
+                    <div class="card__image">
+                        <img src="/images/<%= product.images %>" alt="A Book">
+                    </div>
+                    <div class="card__content">
+                        <h2 class="product__price">$<%= product.priceProduct %></h2>
+                        <p class="product__description"><%=product.sortDescription %></p>
+                        </div>
+                        <div class="card__actions">
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </article>
+            <% } } %>
+        </div>
+    </main>
+    </div>
+</body>
+</html>

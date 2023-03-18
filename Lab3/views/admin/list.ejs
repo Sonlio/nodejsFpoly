@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>LIST PRODUCT</title>
+</head>
+<body>
+    <%- include('home') %>
+    
+    <div class="product-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Author</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(products.length == 0) { %>
+              <tr>
+                <td colspan="6">Products is empty</td>
+              </tr>
+            <% } else {
+              for(const product of products) { %>
+                  <tr>
+                    <td><img src="/images/<%= product.images %>" alt="Product 1"></td>
+                    <td><%= product.nameProduct %></td>
+                    <td>$<%= product.priceProduct %></td>
+                    <td><%= product.authorProduct %></td>
+                    <td><%= product.description %></td>
+                    <td><a href="/admin/edit/<%= product.idProduct %>">Edit</a> | <a href="/admin/delete/<%= product.idProduct %>">Delete</a></td>
+                  </tr>
+             <% } } %>
+          </tbody>
+        </table>
+      </div>      
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Chi tiết sản phẩm</title>
+</head>
+<body>
+    <%- include('nav') %>
+
+    <% const [{name, price, description, images}] = prods %>
+   <div class="detail-product">
+        <div class="detail-left">
+            <div class="img-detail">
+                <img src="/images/<%= images %>" alt="">
+            </div>
+        </div>
+        <div class="detail-right">
+            <div class="name-detail">
+                <h1><%= name %></h1>
+            </div>
+            
+            <div class="price-detail">
+                <h2>$<%= price %></h2>
+            </div>
+            <div class="description-detail">
+                <p><%= description %></p>
+            </div>
+            <button class="btn-addCart-detail">Add to Cart</button>
+        </div>
+   </div>
+    </div>
+</body>
+</html>
