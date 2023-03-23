@@ -3,7 +3,7 @@ const MongoClient = mongodb.MongoClient;
 
 let _db;
 
-MongoClient.connect("mongodb+srv://levansonsvqb:WJ03EUD88hNaSBk3@cluster0.rimqzvh.mongodb.net/lab8")
+MongoClient.connect("mongodb://127.0.0.1:27017/lab8")
   .then((client) => {
     _db = client.db();
   })

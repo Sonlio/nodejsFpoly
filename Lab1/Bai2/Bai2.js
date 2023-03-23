@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 1904;
+const port = 1112;
 
 app.get('/', (req, res) => {
     res.send('<p>Đây là trang Home</p>')

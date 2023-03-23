@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParse = require('body-parser');
-const port = 1904;
+const port = 1114;
 app.use(bodyParse.urlencoded());
 
 const inventors = [
@@ -45,5 +45,5 @@ app.post('/inventor', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Ok');
+    console.log(`Ứng dụng đang chạy với port: ${port}`);
 })

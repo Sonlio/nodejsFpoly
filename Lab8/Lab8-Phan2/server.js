@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.use(router);
 
-mongoose.connect("mongodb+srv://levansonsvqb:WJ03EUD88hNaSBk3@cluster0.rimqzvh.mongodb.net/lab8")
+mongoose.connect("mongodb://127.0.0.1:27017/lab8")
     .then(result => {
         app.listen(port, () => {
             console.log(`Ứng dụng đang chạy với port: ${port}`);

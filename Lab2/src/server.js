@@ -112,7 +112,6 @@ app.post('/addproduct', upload.single('image'), (req, res) => {
 app.get('/detail/:id', (req, res) => {
     const id = req.params.id;
     const filterProduct = listProduct.find(item => item.id == id);
-    console.log(filterProduct);
     res.render('detail', {filterProduct: filterProduct})
 })
 
